@@ -27,12 +27,24 @@ def random_point():
     z = normal()
     return normalize((x, y, z))
 
+#project p2 onto p1
 def project(p1, p2):
-    return scale(p2, dot_product(p1, p2))
+    return scale(p1, dot_product(p1, p2))
 
+#neg around p1
 def neg(p1, p2):
-    x, y, z = p1
+    x, y, z = p2
     xp, yp, zp = project(p1, p2)
     return (2 * xp - x, 2 * yp - y, 2 * zp - z)
 
+def random_pair():
+    a = random_point()
+    x, y, z = random_point()
+    xp, yp, zp = project(a, (x, y, z))
+    b = normalize((x - xp, y - yp, z - zp))
+    return (a, b)
+
+
+
+    
 
