@@ -8,7 +8,7 @@ projective = True
 max_degree = 50
 projections = {}
 
-#Eigenvalue is -degree(degree - 1) / r^2
+#Eigenvalue is -degree(degree + 1) / r^2
 
 def compute_projections(angle):
     for degree in range(max_degree):
